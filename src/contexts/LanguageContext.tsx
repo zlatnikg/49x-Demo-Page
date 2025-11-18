@@ -148,8 +148,8 @@ const translations = {
       contact: 'Kapcsolat',
     },
     hero: {
-      title: 'Ismerje meg Atlast',
-      subtitle: 'A Humanoid Robotika Jövője',
+      title: 'A céged jövője az AI-tól függ',
+      subtitle: 'Mutatjuk az irányt',
       description: 'Tapasztalja meg az intelligens, alkalmazkodó robotok következő generációját, amelyek az emberek oldalán dolgoznak bármilyen környezetben.',
       cta: 'Tudjon meg többet',
     },
