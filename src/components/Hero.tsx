@@ -111,7 +111,7 @@ const Hero = () => {
             </div>
             
             <h1 
-              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
+              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in text-black dark:text-black" 
               style={{ animationDelay: "0.3s" }}
             >
               {t('hero.title')}. {t('hero.subtitle')}.
@@ -119,7 +119,7 @@ const Hero = () => {
             
             <p 
               style={{ animationDelay: "0.5s" }} 
-              className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left"
+              className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 dark:text-black font-normal text-base sm:text-lg text-left"
             >
               {t('hero.description')}
             </p>
@@ -129,7 +129,7 @@ const Hero = () => {
               style={{ animationDelay: "0.7s" }}
             >
               <a 
-                href="#get-access" 
+                href="#book-a-call" 
                 className="flex items-center justify-center group w-full sm:w-auto text-center bg-[#FE5C02] hover:bg-white hover:text-[#FE5C02] text-white rounded-full cursor-pointer text-sm leading-5 py-4 px-6 border border-white transition-all duration-300" 
               >
                 {t('hero.cta')}

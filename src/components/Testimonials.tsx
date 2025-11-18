@@ -66,7 +66,7 @@ const Testimonials = () => {
         <div className="flex items-center gap-4 mb-6">
           <div className="pulse-chip">
             <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">04</span>
-            <span>Testimonials</span>
+            <span>{t('testimonials.badge')}</span>
           </div>
         </div>
         
@@ -95,9 +95,9 @@ const Testimonials = () => {
             backgroundImage={testimonials[2].backgroundImage} 
           />
           <TestimonialCard 
-            content={testimonials[3].content}
-            author={testimonials[3].author} 
-            role={testimonials[3].role} 
+            content={t('testimonials.testimonial4.text')}
+            author={t('testimonials.testimonial4.author')} 
+            role={t('testimonials.testimonial4.role')} 
             gradient={testimonials[3].gradient} 
             backgroundImage={testimonials[3].backgroundImage} 
           />
