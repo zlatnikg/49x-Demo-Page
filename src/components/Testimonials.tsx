@@ -1,5 +1,6 @@
 
 import React, { useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TestimonialProps {
   content: string;
@@ -57,6 +58,7 @@ const TestimonialCard = ({
 };
 
 const Testimonials = () => {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
 
   return <section className="py-12 bg-white relative" id="testimonials" ref={sectionRef}> {/* Reduced from py-20 */}
@@ -68,10 +70,37 @@ const Testimonials = () => {
           </div>
         </div>
         
-        <h2 className="text-5xl font-display font-bold mb-12 text-left">What others say</h2>
+        <h2 className="text-5xl font-display font-bold mb-12 text-left">{t('testimonials.title')}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => <TestimonialCard key={index} content={testimonial.content} author={testimonial.author} role={testimonial.role} gradient={testimonial.gradient} backgroundImage={testimonial.backgroundImage} />)}
+          <TestimonialCard 
+            content={t('testimonials.testimonial1.text')}
+            author={t('testimonials.testimonial1.author')} 
+            role={t('testimonials.testimonial1.role')} 
+            gradient={testimonials[0].gradient} 
+            backgroundImage={testimonials[0].backgroundImage} 
+          />
+          <TestimonialCard 
+            content={t('testimonials.testimonial2.text')}
+            author={t('testimonials.testimonial2.author')} 
+            role={t('testimonials.testimonial2.role')} 
+            gradient={testimonials[1].gradient} 
+            backgroundImage={testimonials[1].backgroundImage} 
+          />
+          <TestimonialCard 
+            content={t('testimonials.testimonial3.text')}
+            author={t('testimonials.testimonial3.author')} 
+            role={t('testimonials.testimonial3.role')} 
+            gradient={testimonials[2].gradient} 
+            backgroundImage={testimonials[2].backgroundImage} 
+          />
+          <TestimonialCard 
+            content={testimonials[3].content}
+            author={testimonials[3].author} 
+            role={testimonials[3].role} 
+            gradient={testimonials[3].gradient} 
+            backgroundImage={testimonials[3].backgroundImage} 
+          />
         </div>
       </div>
     </section>;
