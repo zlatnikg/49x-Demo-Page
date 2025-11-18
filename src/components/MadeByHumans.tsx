@@ -1,6 +1,7 @@
-
 import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 const MadeByHumans = () => {
+  const { t } = useLanguage();
   return <section id="made-by-humans" className="w-full bg-white py-0">
       <div className="section-container opacity-0 animate-on-scroll pb-2">
         {/* Removed the pulse-chip button/element that was here */}
@@ -24,7 +25,7 @@ const MadeByHumans = () => {
               marginBottom: "-30px",
               padding: "0px 0px 100px"
             }} className="sm:text-5xl font-playfair text-white italic mt-0 mx-0 font-thin text-6xl md:text-7xl py-0 px-0 text-center lg:text-7xl">
-                Made By AI & Human
+                {t('madeByHumans.title')} {t('madeByHumans.subtitle')}
               </h2>
             </div>
             
