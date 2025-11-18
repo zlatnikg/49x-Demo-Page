@@ -47,7 +47,7 @@ if aws s3 ls "s3://$BUCKET_NAME" 2>&1 | grep -q 'NoSuchBucket'; then
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "s3://$BUCKET_NAME/*"
+            "Resource": "arn:aws:s3:::$BUCKET_NAME/*"
         }
     ]
 }
