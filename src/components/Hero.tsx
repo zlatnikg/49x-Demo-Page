@@ -140,7 +140,7 @@ const Hero = () => {
           
           <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
             {lottieData ? (
-              <div className="relative z-10 animate-fade-in" style={{ animationDelay: "0.9s" }}>
+              <div className="relative z-10 animate-fade-in scale-[0.81]" style={{ animationDelay: "0.9s" }}>
                 <LottieAnimation 
                   animationPath={lottieData} 
                   className="w-full h-auto max-w-lg mx-auto"
@@ -150,8 +150,8 @@ const Hero = () => {
               </div>
             ) : (
               <>
-              <div className="absolute inset-0 bg-dark-900 rounded-2xl sm:rounded-3xl -z-10 shadow-xl"></div>
-              <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
+              <div className="absolute inset-0 bg-gray-200/50 dark:bg-dark-900 rounded-2xl sm:rounded-3xl -z-10 shadow-xl scale-[0.85] dark:scale-100"></div>
+              <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl scale-[0.81]">
                 <img 
                   ref={imageRef} 
                   src="/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png" 

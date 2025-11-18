@@ -150,7 +150,7 @@ const translations = {
     bookACall: {
       badge: 'Get Started',
       title: 'Book a Free Consultation',
-      description: 'Schedule a call with our team to discuss how we can help transform your business with AI.',
+      description: 'Book an appointment with our expert to plan how we can help transform your business with AI.',
     },
     madeByHumans: {
       title: 'Made by Humans',
@@ -280,7 +280,7 @@ const translations = {
     bookACall: {
       badge: 'Vágjunk Bele',
       title: 'Foglalj Ingyenes Konzultációt',
-      description: 'Foglalj időpontot csapatunkkal, hogy megbeszéljük, hogyan segíthetünk átalakítani a vállalkozásodat az AI-val.',
+      description: 'Foglalj időpontot szakértőnkkel, hogy megtervezzük, hogyan segíthetünk átalakítani a vállalkozásodat az AI segítségével.',
     },
     madeByHumans: {
       title: 'Emberek által készítve',
@@ -410,7 +410,7 @@ const translations = {
     bookACall: {
       badge: 'Loslegen',
       title: 'Kostenlose Beratung Buchen',
-      description: 'Vereinbaren Sie einen Termin mit unserem Team, um zu besprechen, wie wir Ihr Unternehmen mit KI transformieren können.',
+      description: 'Vereinbaren Sie einen Termin mit unserem Experten, um zu planen, wie wir Ihr Unternehmen mit KI transformieren können.',
     },
     madeByHumans: {
       title: 'Von Menschen gemacht',

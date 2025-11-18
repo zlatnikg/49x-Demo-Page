@@ -62,8 +62,46 @@ This project is built with .
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/35d72d2e-6e25-40e5-9b0c-c0d1a7c1b727) and click on Share -> Publish.
+### Deploy to S3 (sprint.49x.ai)
 
-## I want to use a custom domain - is that possible?
+This project is configured to deploy to AWS S3 for the subdomain `sprint.49x.ai`.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+**Prerequisites:**
+- AWS CLI installed and configured (`aws configure`)
+- Node.js and npm installed
+
+**Deployment steps:**
+
+1. Install dependencies (if not already done):
+   ```sh
+   npm install
+   ```
+
+2. Deploy to S3:
+   ```sh
+   npm run deploy
+   ```
+   
+   Or run the script directly:
+   ```sh
+   ./deploy.sh
+   ```
+
+The script will:
+- Build the project
+- Create the S3 bucket `sprint.49x.ai` (if it doesn't exist)
+- Configure static website hosting
+- Upload all files to S3
+
+**DNS Configuration:**
+
+After deployment, configure your DNS:
+1. Go to your DNS provider (where 49x.ai is hosted)
+2. Create a CNAME record:
+   - Name: `sprint`
+   - Value: `sprint.49x.ai.s3-website.eu-central-1.amazonaws.com`
+3. Wait for DNS propagation (can take a few minutes to hours)
+
+Your site will be available at: **http://sprint.49x.ai**
+
+**Note:** For HTTPS support, consider using CloudFront in front of the S3 bucket.

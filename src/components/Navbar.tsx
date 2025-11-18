@@ -51,8 +51,8 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
         isScrolled 
-          ? "bg-white/80 dark:bg-dark-900/80 backdrop-blur-md shadow-sm" 
-          : "bg-transparent"
+          ? "bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-sm" 
+          : "bg-transparent dark:bg-black/80 dark:backdrop-blur-md"
       )}
     >
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -68,9 +68,14 @@ const Navbar = () => {
           <img 
             src="https://res.cloudinary.com/dc1iuuikv/image/upload/v1763485151/49x_logo_black_NB_s9eufn.png" 
             alt="AI Strategy Sprint Logo" 
-            className="h-20 sm:h-24 w-auto" 
+            className="h-20 sm:h-24 w-auto dark:hidden" 
           />
-          <span className="text-black dark:text-black font-display font-bold tracking-tight text-2xl sm:text-3xl lg:text-4xl hidden sm:block">AI Strategy Sprint</span>
+          <img 
+            src="https://res.cloudinary.com/dc1iuuikv/image/upload/v1763494156/49x_logo_white_NB_qsxjk8.png" 
+            alt="AI Strategy Sprint Logo" 
+            className="h-20 sm:h-24 w-auto hidden dark:block" 
+          />
+          <span className="text-black dark:text-white font-display font-bold tracking-tight text-2xl sm:text-3xl lg:text-4xl hidden sm:block">AI Strategy Sprint</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -85,19 +90,19 @@ const Navbar = () => {
           
           {/* Dark Mode Toggle */}
           <div className="flex items-center gap-2">
-            <Sun className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+            <Sun className="h-4 w-4 text-gray-600 dark:text-white" />
             <Switch 
               checked={theme === 'dark'} 
               onCheckedChange={toggleTheme}
               aria-label="Toggle dark mode"
             />
-            <Moon className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+            <Moon className="h-4 w-4 text-gray-600 dark:text-white" />
           </div>
           
           {/* Language Switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="gap-2">
+              <Button variant="ghost" size="sm" className="gap-2 text-gray-700 dark:text-white">
                 <Languages className="h-4 w-4" />
                 <span className="uppercase">{language}</span>
               </Button>
@@ -118,7 +123,7 @@ const Navbar = () => {
 
         {/* Mobile menu button - increased touch target */}
         <button 
-          className="md:hidden text-gray-700 dark:text-gray-300 p-3 focus:outline-none" 
+          className="md:hidden text-gray-700 dark:text-white p-3 focus:outline-none" 
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >

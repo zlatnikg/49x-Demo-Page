@@ -3,13 +3,13 @@ import React from "react";
 
 const ImageShowcaseSection = () => {
   return (
-    <section className="hidden w-full pt-0 pb-8 sm:pb-12 bg-white" id="showcase">
+    <section className="hidden w-full pt-0 pb-8 sm:pb-12 bg-white dark:bg-black transition-colors duration-300" id="showcase">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 animate-on-scroll">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-gray-900 mb-3 sm:mb-4">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-gray-900 dark:text-white mb-3 sm:mb-4">
             Experience the Future Today
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
             Our cutting-edge humanoid robot is designed to transform how we interact 
             with technology in everyday environments.
           </p>
@@ -23,9 +23,9 @@ const ImageShowcaseSection = () => {
               className="w-full h-auto object-cover"
             />
           </div>
-          <div className="bg-white p-4 sm:p-8">
-            <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 sm:mb-4">Next Generation Robotics</h3>
-            <p className="text-gray-700 text-sm sm:text-base">
+          <div className="bg-white dark:bg-dark-900 p-4 sm:p-8 transition-colors duration-300">
+            <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white">Next Generation Robotics</h3>
+            <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
               Built with precision engineering and sophisticated AI, our robots seamlessly 
               integrate into various environments, from homes to hospitals, providing 
               assistance and enriching human experiences.
