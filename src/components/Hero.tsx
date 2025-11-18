@@ -107,14 +107,14 @@ const Hero = () => {
               style={{ animationDelay: "0.1s" }}
             >
               <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">01</span>
-              <span>Purpose</span>
+              <span>Cél</span>
             </div>
             
             <h1 
               className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
               style={{ animationDelay: "0.3s" }}
             >
-              {t('hero.title')}: {t('hero.subtitle')}
+              {t('hero.title')}. {t('hero.subtitle')}.
             </h1>
             
             <p 
@@ -130,18 +130,7 @@ const Hero = () => {
             >
               <a 
                 href="#get-access" 
-                className="flex items-center justify-center group w-full sm:w-auto text-center" 
-                style={{
-                  backgroundColor: '#FE5C02',
-                  borderRadius: '1440px',
-                  boxSizing: 'border-box',
-                  color: '#FFFFFF',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                  padding: '16px 24px', // Slightly reduced padding for mobile
-                  border: '1px solid white',
-                }}
+                className="flex items-center justify-center group w-full sm:w-auto text-center bg-[#FE5C02] hover:bg-white hover:text-[#FE5C02] text-white rounded-full cursor-pointer text-sm leading-5 py-4 px-6 border border-white transition-all duration-300" 
               >
                 {t('hero.cta')}
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />

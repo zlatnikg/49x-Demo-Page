@@ -55,22 +55,23 @@ const Navbar = () => {
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
         <a 
           href="#" 
-          className="flex items-center space-x-2"
+          className="flex items-center space-x-3"
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();
           }}
-          aria-label="Pulse Robot"
+          aria-label="AI Strategy Sprint"
         >
           <img 
-            src="/logo.svg" 
-            alt="Pulse Robot Logo" 
-            className="h-7 sm:h-8" 
+            src="https://res.cloudinary.com/dc1iuuikv/image/upload/v1763485151/49x_logo_black_NB_s9eufn.png" 
+            alt="AI Strategy Sprint Logo" 
+            className="h-20 sm:h-24 w-auto" 
           />
+          <span className="text-black font-display font-bold tracking-tight text-2xl sm:text-3xl lg:text-4xl hidden sm:block">AI Strategy Sprint</span>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6">
           <nav className="flex space-x-8">
             <a 
               href="#" 
@@ -86,6 +87,14 @@ const Navbar = () => {
             <a href="#details" className="nav-link">{t('nav.contact')}</a>
           </nav>
           
+          {/* CTA Button */}
+          <a 
+            href="#get-access" 
+            className="bg-[#FE5C02] hover:bg-[#e04d02] text-white font-medium px-6 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 active:scale-95 whitespace-nowrap"
+          >
+            {t('hero.cta')}
+          </a>
+          
           {/* Language Switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -100,6 +109,9 @@ const Navbar = () => {
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => setLanguage('hu')}>
                 Magyar
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage('de')}>
+                Deutsch
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -154,10 +166,22 @@ const Navbar = () => {
             {t('nav.contact')}
           </a>
           
+          {/* Mobile CTA Button */}
+          <a 
+            href="#get-access" 
+            className="bg-[#FE5C02] hover:bg-[#e04d02] text-white font-medium py-3 px-6 w-full text-center rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 active:scale-95 mt-4"
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            {t('hero.cta')}
+          </a>
+          
           {/* Mobile Language Switcher */}
           <div className="pt-4 border-t border-gray-200 w-full">
-            <p className="text-sm text-gray-500 text-center mb-3">Language / Nyelv</p>
-            <div className="flex gap-3 justify-center">
+            <p className="text-sm text-gray-500 text-center mb-3">Language / Nyelv / Sprache</p>
+            <div className="flex gap-3 justify-center flex-wrap">
               <button
                 onClick={() => {
                   setLanguage('en');
@@ -187,6 +211,21 @@ const Navbar = () => {
                 )}
               >
                 Magyar
+              </button>
+              <button
+                onClick={() => {
+                  setLanguage('de');
+                  setIsMenuOpen(false);
+                  document.body.style.overflow = '';
+                }}
+                className={cn(
+                  "px-4 py-2 rounded-lg font-medium transition-colors",
+                  language === 'de' 
+                    ? "bg-pulse-500 text-white" 
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                )}
+              >
+                Deutsch
               </button>
             </div>
           </div>

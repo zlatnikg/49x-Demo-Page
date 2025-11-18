@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-type Language = 'en' | 'hu';
+type Language = 'en' | 'hu' | 'de';
 
 interface LanguageContextType {
   language: Language;
@@ -23,7 +23,7 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('hu');
 
   const t = (key: string): string => {
     const keys = key.split('.');
@@ -51,14 +51,20 @@ const translations = {
       contact: 'Contact',
     },
     hero: {
-      title: 'Meet Atlas',
-      subtitle: 'The Future of Humanoid Robotics',
-      description: 'Experience the next generation of intelligent, adaptive robots designed to work alongside humans in any environment.',
-      cta: 'Learn More',
+      title: 'Your company\'s future depends on AI',
+      subtitle: 'We show the way',
+      description: 'We help you build real business advantage from AI, so you don\'t fall behind in the new era. Quickly, risk-free, with measurable results.',
+      cta: 'Book Free Consultation',
     },
     specs: {
       badge: 'Specs',
-      description: 'Atlas works with your team, not instead of it. By handling repetitive tasks, improving safety conditions, and learning from every interaction, Atlas helps humans focus on what they do best: create, solve, and innovate.',
+      description: 'The market is changing faster than ever: new technologies, new competitors, new customer demands. We help your company not just react to this, but also set the direction. We make opportunities transparent, uncover hidden risks, train your team, and help you develop the business direction that allows you to confidently step into the coming years.',
+    },
+    humanoid: {
+      title: 'Why 49x',
+      card1: 'We\'re giving AI a way to navigate the physical world',
+      card2: 'We\'re bringing adaptive intelligence to where humans work',
+      card3: 'We\'re creating companions, not replacements',
     },
     showcase: {
       title: 'Experience the Future Today',
@@ -138,7 +144,7 @@ const translations = {
       legal: 'Legal',
       privacy: 'Privacy',
       terms: 'Terms',
-      copyright: '© 2024 Pulse Robot. All rights reserved.',
+      copyright: '© 2024 AI Strategy Sprint. All rights reserved.',
     },
   },
   hu: {
@@ -150,12 +156,18 @@ const translations = {
     hero: {
       title: 'A céged jövője az AI-tól függ',
       subtitle: 'Mutatjuk az irányt',
-      description: 'Tapasztalja meg az intelligens, alkalmazkodó robotok következő generációját, amelyek az emberek oldalán dolgoznak bármilyen környezetben.',
-      cta: 'Tudjon meg többet',
+      description: 'Segítünk valódi üzleti előnyt építeni az AI-ból, hogy ne maradj le az új korszakban. Gyorsan, kockázatmentesen, mérhető eredményekkel.',
+      cta: 'Foglalj Ingyenes Konzultációt',
     },
     specs: {
       badge: 'Specifikációk',
-      description: 'Az Atlas a csapatával dolgozik, nem helyette. Az ismétlődő feladatok kezelésével, a biztonsági feltételek javításával és minden interakcióból való tanulással az Atlas segít az embereknek abban, amiben a legjobbak: alkotni, megoldani és innoválni.',
+      description: 'A piac gyorsabban változik, mint valaha: új technológiák, új versenytársak, új ügyféligények. Mi abban segítünk, hogy a céged ne csak reagáljon erre, hanem irányt is mutasson. Átláthatóvá tesszük a lehetőségeket, feltárjuk a rejtett kockázatokat, képezzük a csapatodat, és segítünk kialakítani azt az üzleti irányt, amellyel magabiztosan léphetsz a következő évekbe.',
+    },
+    humanoid: {
+      title: 'Miért a 49x',
+      card1: 'Segítünk eligazodni az AI-korszakban',
+      card2: 'Az AI-t ott vezetjük be, ahol a csapatodnak a legnagyobb előrelépést hozza',
+      card3: 'Eszközöket adunk és rendszereket építünk, nem helyettesítünk',
     },
     showcase: {
       title: 'Tapasztalja meg a jövőt már ma',
@@ -235,7 +247,110 @@ const translations = {
       legal: 'Jogi',
       privacy: 'Adatvédelem',
       terms: 'Feltételek',
-      copyright: '© 2024 Pulse Robot. Minden jog fenntartva.',
+      copyright: '© 2024 AI Strategy Sprint. Minden jog fenntartva.',
+    },
+  },
+  de: {
+    nav: {
+      home: 'Startseite',
+      about: 'Über uns',
+      contact: 'Kontakt',
+    },
+    hero: {
+      title: 'Die Zukunft Ihres Unternehmens hängt von KI ab',
+      subtitle: 'Wir zeigen den Weg',
+      description: 'Wir helfen Ihnen, echten Geschäftsvorteil aus KI aufzubauen, damit Sie im neuen Zeitalter nicht zurückbleiben. Schnell, risikofrei, mit messbaren Ergebnissen.',
+      cta: 'Kostenlose Beratung buchen',
+    },
+    specs: {
+      badge: 'Spezifikationen',
+      description: 'Der Markt verändert sich schneller als je zuvor: neue Technologien, neue Wettbewerber, neue Kundenanforderungen. Wir helfen Ihrem Unternehmen nicht nur, darauf zu reagieren, sondern auch die Richtung vorzugeben. Wir machen Chancen transparent, decken verborgene Risiken auf, bilden Ihr Team aus und helfen Ihnen, die Geschäftsrichtung zu entwickeln, mit der Sie selbstbewusst in die kommenden Jahre treten können.',
+    },
+    humanoid: {
+      title: 'Warum 49x',
+      card1: 'Wir helfen Ihnen, sich im KI-Zeitalter zurechtzufinden',
+      card2: 'Wir führen KI dort ein, wo sie Ihrem Team den größten Fortschritt bringt',
+      card3: 'Wir geben Werkzeuge und bauen Systeme, wir ersetzen nicht',
+    },
+    showcase: {
+      title: 'Erleben Sie die Zukunft heute',
+      description: 'Unser hochmoderner humanoider Roboter wurde entwickelt, um zu transformieren, wie wir mit Technologie in alltäglichen Umgebungen interagieren.',
+      cardTitle: 'Robotik der nächsten Generation',
+      cardDescription: 'Gebaut mit Präzisionsingenieurwesen und ausgeklügelter KI, integrieren sich unsere Roboter nahtlos in verschiedene Umgebungen, von Häusern bis zu Krankenhäusern, und bieten Unterstützung und bereichern menschliche Erfahrungen.',
+    },
+    features: {
+      title: 'Warum Atlas wählen?',
+      description: 'Entdecken Sie die fortschrittlichen Funktionen, die unseren humanoiden Roboter zur perfekten Ergänzung für Ihr Team machen.',
+      feature1: {
+        title: 'Fortschrittliche KI',
+        description: 'Angetrieben von modernster künstlicher Intelligenz für natürliche Interaktionen',
+      },
+      feature2: {
+        title: 'Menschenähnliche Bewegung',
+        description: 'Flüssige, natürliche Bewegungen, die menschliche Bewegungsmuster widerspiegeln',
+      },
+      feature3: {
+        title: 'Adaptives Lernen',
+        description: 'Lernt und verbessert sich kontinuierlich aus jeder Interaktion',
+      },
+      feature4: {
+        title: '24/7 Betrieb',
+        description: 'Zuverlässige Leistung rund um die Uhr ohne Ermüdung',
+      },
+      feature5: {
+        title: 'Sichere Zusammenarbeit',
+        description: 'Gebaut mit Sicherheitsfunktionen für nahtlose Mensch-Roboter-Zusammenarbeit',
+      },
+      feature6: {
+        title: 'Einfache Integration',
+        description: 'Integriert sich nahtlos in bestehende Workflows und Systeme',
+      },
+    },
+    testimonials: {
+      title: 'Was unsere Partner sagen',
+      description: 'Hören Sie von Organisationen, die bereits mit Atlas arbeiten.',
+      testimonial1: {
+        text: 'Atlas hat unsere Lagerbetriebe revolutioniert. Die Effizienzsteigerungen sind bemerkenswert.',
+        author: 'Sarah Johnson',
+        role: 'Operationsdirektorin',
+      },
+      testimonial2: {
+        text: 'Die adaptive Lernfähigkeit ist beeindruckend. Atlas wird jeden Tag besser.',
+        author: 'Michael Chen',
+        role: 'CTO',
+      },
+      testimonial3: {
+        text: 'Sicherheit war unsere oberste Priorität, und Atlas hat alle unsere Erwartungen in dieser Hinsicht übertroffen.',
+        author: 'Emma Williams',
+        role: 'Sicherheitsmanagerin',
+      },
+    },
+    newsletter: {
+      title: 'Bleiben Sie auf dem Laufenden',
+      description: 'Abonnieren Sie unseren Newsletter für die neuesten Updates zu Atlas und humanoiden Robotik.',
+      placeholder: 'Geben Sie Ihre E-Mail ein',
+      button: 'Abonnieren',
+    },
+    madeByHumans: {
+      title: 'Von Menschen gemacht',
+      subtitle: 'Für Menschen',
+      description: 'Jeder Atlas-Roboter wird sorgfältig von unserem Team aus Ingenieuren, Designern und KI-Spezialisten entwickelt, die leidenschaftlich daran arbeiten, Technologie zu schaffen, die das menschliche Potenzial erweitert.',
+    },
+    footer: {
+      description: 'Führen Sie die Zukunft der humanoiden Robotik mit Innovation und Exzellenz an.',
+      product: 'Produkt',
+      features: 'Funktionen',
+      pricing: 'Preise',
+      resources: 'Ressourcen',
+      company: 'Unternehmen',
+      about: 'Über uns',
+      blog: 'Blog',
+      careers: 'Karriere',
+      contact: 'Kontakt',
+      legal: 'Rechtliches',
+      privacy: 'Datenschutz',
+      terms: 'Bedingungen',
+      copyright: '© 2024 AI Strategy Sprint. Alle Rechte vorbehalten.',
     },
   },
 };

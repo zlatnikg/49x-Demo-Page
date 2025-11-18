@@ -1,7 +1,9 @@
 
 import React, { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HumanoidSection = () => {
+  const { t, language } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsContainerRef = useRef<HTMLDivElement>(null);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
@@ -96,12 +98,12 @@ const HumanoidSection = () => {
                 animationDelay: "0.1s"
               }}>
                 <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">02</span>
-                <span>Humanoid</span>
+                <span>49x</span>
               </div>
             </div>
             
             <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-1 md:mb-2">
-              Why Humanoid
+              {t('humanoid.title')}
             </h2>
           </div>
           
@@ -135,7 +137,7 @@ const HumanoidSection = () => {
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
                 <div className="max-w-lg">
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4">
-                    We're giving AI a way to navigate the physical world
+                    {t('humanoid.card1')}
                   </h3>
                 </div>
               </div>
@@ -171,7 +173,7 @@ const HumanoidSection = () => {
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
                 <div className="max-w-lg">
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4">
-                    We're bringing adaptive intelligence to where humans work
+                    {t('humanoid.card2')}
                   </h3>
                 </div>
               </div>
@@ -207,7 +209,11 @@ const HumanoidSection = () => {
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
                 <div className="max-w-lg">
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4">
-                    We're creating companions, <span className="text-[#FC4D0A]">not replacements</span>
+                    {language === 'en' ? (
+                      <>We're creating companions, <span className="text-[#FC4D0A]">not replacements</span></>
+                    ) : (
+                      t('humanoid.card3')
+                    )}
                   </h3>
                 </div>
               </div>

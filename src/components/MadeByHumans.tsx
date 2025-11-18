@@ -11,7 +11,7 @@ const MadeByHumans = () => {
           backgroundImage: "url('/background-section3.png')"
         }}>
             <div className="flex items-center text-white">
-              <img src="/logo.svg" alt="Pulse Robot Logo" className="h-5 sm:h-6 w-auto mr-3 invert" />
+              <img src="https://res.cloudinary.com/dc1iuuikv/image/upload/v1763485151/49x_logo_black_NB_s9eufn.png" alt="AI Strategy Sprint Logo" className="h-5 sm:h-6 w-auto mr-3 invert" />
               <span className="text-white text-xl font-medium">
             </span>
             </div>
