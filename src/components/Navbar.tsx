@@ -1,11 +1,19 @@
-
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,20 +70,40 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          <a 
-            href="#" 
-            className="nav-link"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
-            }}
-          >
-            Home
-          </a>
-          <a href="#features" className="nav-link">About</a>
-          <a href="#details" className="nav-link">Contact</a>
-        </nav>
+        <div className="hidden md:flex items-center space-x-8">
+          <nav className="flex space-x-8">
+            <a 
+              href="#" 
+              className="nav-link"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToTop();
+              }}
+            >
+              {t('nav.home')}
+            </a>
+            <a href="#features" className="nav-link">{t('nav.about')}</a>
+            <a href="#details" className="nav-link">{t('nav.contact')}</a>
+          </nav>
+          
+          {/* Language Switcher */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="gap-2">
+                <Languages className="h-4 w-4" />
+                <span className="uppercase">{language}</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setLanguage('en')}>
+                English
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage('hu')}>
+                Magyar
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
 
         {/* Mobile menu button - increased touch target */}
         <button 
@@ -103,7 +131,7 @@ const Navbar = () => {
               document.body.style.overflow = '';
             }}
           >
-            Home
+            {t('nav.home')}
           </a>
           <a 
             href="#features" 
@@ -113,7 +141,7 @@ const Navbar = () => {
               document.body.style.overflow = '';
             }}
           >
-            About
+            {t('nav.about')}
           </a>
           <a 
             href="#details" 
@@ -123,8 +151,45 @@ const Navbar = () => {
               document.body.style.overflow = '';
             }}
           >
-            Contact
+            {t('nav.contact')}
           </a>
+          
+          {/* Mobile Language Switcher */}
+          <div className="pt-4 border-t border-gray-200 w-full">
+            <p className="text-sm text-gray-500 text-center mb-3">Language / Nyelv</p>
+            <div className="flex gap-3 justify-center">
+              <button
+                onClick={() => {
+                  setLanguage('en');
+                  setIsMenuOpen(false);
+                  document.body.style.overflow = '';
+                }}
+                className={cn(
+                  "px-4 py-2 rounded-lg font-medium transition-colors",
+                  language === 'en' 
+                    ? "bg-pulse-500 text-white" 
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                )}
+              >
+                English
+              </button>
+              <button
+                onClick={() => {
+                  setLanguage('hu');
+                  setIsMenuOpen(false);
+                  document.body.style.overflow = '';
+                }}
+                className={cn(
+                  "px-4 py-2 rounded-lg font-medium transition-colors",
+                  language === 'hu' 
+                    ? "bg-pulse-500 text-white" 
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                )}
+              >
+                Magyar
+              </button>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
