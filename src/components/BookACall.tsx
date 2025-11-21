@@ -60,15 +60,15 @@ const BookACall = () => {
   }, []);
   
   return (
-    <section id="book-a-call" className="bg-black py-12 sm:py-16 md:py-20 relative overflow-hidden transition-colors duration-300">
+    <section id="book-a-call" className="bg-white dark:bg-black py-12 sm:py-16 md:py-20 relative overflow-hidden transition-colors duration-300">
       {/* Orange half-circle design element similar to hero section */}
       <div className="absolute -bottom-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
       
       <div className="section-container opacity-0 animate-on-scroll relative z-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-10">
           <div className="flex items-center gap-4 mb-6">
             <div className="pulse-chip">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">06</span>
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">04</span>
               <span>{t('bookACall.badge')}</span>
             </div>
           </div>
@@ -77,15 +77,17 @@ const BookACall = () => {
           <p className="text-xl text-gray-700 dark:text-gray-300 mb-10 text-left">
             {t('bookACall.description')}
           </p>
-          
-          {/* Cal.com Calendar Embed */}
-          <div className="w-full rounded-lg overflow-hidden shadow-lg bg-black">
-            <div 
-              ref={calRef}
-              style={{ width: '100%', height: '100%', overflow: 'scroll', minHeight: '700px' }} 
-              id="my-cal-inline-49x-ai-sprint-konzultacio"
-            />
-          </div>
+        </div>
+      </div>
+      
+      {/* Cal.com Calendar Embed - Full Width (breaks out of container padding) */}
+      <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <div className="w-full rounded-lg overflow-hidden shadow-lg bg-white dark:bg-black">
+          <div 
+            ref={calRef}
+            style={{ width: '100%', height: '100%', overflow: 'scroll', minHeight: '700px' }} 
+            id="my-cal-inline-49x-ai-sprint-konzultacio"
+          />
         </div>
       </div>
     </section>

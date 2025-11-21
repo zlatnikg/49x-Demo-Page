@@ -5,7 +5,7 @@ const HumanIntuitionSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-12 bg-black" id="human-intuition" ref={sectionRef}> {/* Reduced from py-20 */}
+    <section className="py-12 bg-gray-50 dark:bg-black" id="human-intuition" ref={sectionRef}> {/* Reduced from py-20 */}
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-left">

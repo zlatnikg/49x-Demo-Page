@@ -51,8 +51,8 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
         isScrolled 
-          ? "bg-black/80 backdrop-blur-md shadow-sm" 
-          : "bg-transparent"
+          ? "bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-sm" 
+          : "bg-transparent dark:bg-black/80 dark:backdrop-blur-md"
       )}
     >
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -133,7 +133,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation - improved for better touch experience */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-black flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
+        "fixed inset-0 z-40 bg-white dark:bg-black flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
         <nav className="flex flex-col space-y-8 items-center mt-8">
@@ -150,7 +150,7 @@ const Navbar = () => {
           </a>
           
           {/* Mobile Dark Mode Toggle */}
-          <div className="pt-4 border-t border-gray-200 dark:border-dark-700 w-full">
+          <div className="pt-4 border-t border-gray-200 dark:border-gray-800 w-full">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Sun className="h-5 w-5 text-gray-600 dark:text-gray-400" />
               <Switch 
@@ -164,7 +164,7 @@ const Navbar = () => {
           </div>
           
           {/* Mobile Language Switcher */}
-          <div className="pt-4 border-t border-gray-200 dark:border-dark-700 w-full">
+          <div className="pt-4 border-t border-gray-200 dark:border-gray-800 w-full">
             <p className="text-sm text-gray-500 dark:text-gray-400 text-center mb-3">Language / Nyelv / Sprache</p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button
@@ -177,7 +177,7 @@ const Navbar = () => {
                   "px-4 py-2 rounded-lg font-medium transition-colors",
                   language === 'en' 
                     ? "bg-pulse-500 text-white" 
-                    : "bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-600"
+                    : "bg-gray-100 dark:bg-black text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-black"
                 )}
               >
                 English

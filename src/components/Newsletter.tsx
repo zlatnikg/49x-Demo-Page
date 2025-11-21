@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Newsletter = () => {
   const { t } = useLanguage();
-  return <section id="newsletter" className="bg-black py-0 relative overflow-hidden">
+  return <section id="newsletter" className="bg-white dark:bg-black py-0 relative overflow-hidden">
       {/* Orange half-circle design element similar to hero section */}
       <div className="absolute -bottom-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
       
