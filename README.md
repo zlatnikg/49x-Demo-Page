@@ -62,9 +62,9 @@ This project is built with .
 
 ## How can I deploy this project?
 
-### Deploy to S3 (sprint.49x.ai)
+### Deploy to S3 (intro.49x.ai)
 
-This project is configured to deploy to AWS S3 for the subdomain `sprint.49x.ai`.
+This project is configured to deploy to AWS S3 for the subdomain `intro.49x.ai`.
 
 **Prerequisites:**
 - AWS CLI installed and configured (`aws configure`)
@@ -89,7 +89,7 @@ This project is configured to deploy to AWS S3 for the subdomain `sprint.49x.ai`
 
 The script will:
 - Build the project
-- Create the S3 bucket `sprint.49x.ai` (if it doesn't exist)
+- Create the S3 bucket `intro.49x.ai` (if it doesn't exist)
 - Configure static website hosting
 - Upload all files to S3
 
@@ -98,10 +98,10 @@ The script will:
 After deployment, configure your DNS:
 1. Go to your DNS provider (where 49x.ai is hosted)
 2. Create a CNAME record:
-   - Name: `sprint`
-   - Value: `sprint.49x.ai.s3-website.eu-central-1.amazonaws.com`
+   - Name: `intro`
+   - Value: `intro.49x.ai.s3-website.eu-central-1.amazonaws.com`
 3. Wait for DNS propagation (can take a few minutes to hours)
 
-Your site will be available at: **http://sprint.49x.ai**
+Your site will be available at: **http://intro.49x.ai**
 
 **Note:** For HTTPS support, consider using CloudFront in front of the S3 bucket.

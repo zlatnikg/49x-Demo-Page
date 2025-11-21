@@ -6,11 +6,11 @@
 set -e  # Exit on error
 
 # Configuration
-BUCKET_NAME="sprint.49x.ai"
+BUCKET_NAME="intro.49x.ai"
 REGION="eu-central-1"
 DIST_DIR="dist"
 
-echo "🚀 Starting deployment to sprint.49x.ai..."
+echo "🚀 Starting deployment to intro.49x.ai..."
 
 # Step 1: Build the project
 echo "📦 Building project..."
@@ -113,11 +113,11 @@ echo ""
 echo "📝 Next steps for DNS configuration:"
 echo "   1. Go to your DNS provider (where 49x.ai is hosted)"
 echo "   2. Create a CNAME record:"
-echo "      Name: sprint"
+echo "      Name: intro"
 echo "      Value: $BUCKET_NAME.s3-website.$REGION.amazonaws.com"
 echo "   3. Wait for DNS propagation (can take a few minutes to hours)"
 echo ""
 echo "   Or use Route 53/CloudFront for HTTPS support and better performance"
 echo ""
-echo "🌐 Your site will be available at: http://sprint.49x.ai"
+echo "🌐 Your site will be available at: http://intro.49x.ai"
 echo "   (after DNS propagation)"
