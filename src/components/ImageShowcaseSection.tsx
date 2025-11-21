@@ -3,7 +3,7 @@ import React from "react";
 
 const ImageShowcaseSection = () => {
   return (
-    <section className="hidden w-full pt-0 pb-8 sm:pb-12 bg-white dark:bg-black transition-colors duration-300" id="showcase">
+    <section className="hidden w-full pt-0 pb-8 sm:pb-12 bg-black transition-colors duration-300" id="showcase">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 animate-on-scroll">
           <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-gray-900 dark:text-white mb-3 sm:mb-4">
@@ -23,7 +23,7 @@ const ImageShowcaseSection = () => {
               className="w-full h-auto object-cover"
             />
           </div>
-          <div className="bg-white dark:bg-dark-900 p-4 sm:p-8 transition-colors duration-300">
+          <div className="bg-black p-4 sm:p-8 transition-colors duration-300">
             <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white">Next Generation Robotics</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
               Built with precision engineering and sophisticated AI, our robots seamlessly 

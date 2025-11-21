@@ -68,7 +68,8 @@ const Index = () => {
         <DetailsSection />
         <ImageShowcaseSection />
         <Features />
-        <Testimonials />
+        {/* Testimonials component hidden - uncomment to restore */}
+        {/* <Testimonials /> */}
         <BookACall />
         {/* MadeByHumans component hidden - uncomment to restore */}
         {/* <MadeByHumans /> */}

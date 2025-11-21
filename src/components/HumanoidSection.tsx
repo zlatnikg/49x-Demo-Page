@@ -44,7 +44,7 @@ const HumanoidSection = () => {
           
           const sectionRect = sectionRef.current.getBoundingClientRect();
           const viewportHeight = window.innerHeight;
-          const totalScrollDistance = viewportHeight * 2;
+          const totalScrollDistance = viewportHeight * 1.2; // Reduced from 2x to 1.2x for easier scrolling
           
           // Calculate the scroll progress
           let progress = 0;
@@ -52,10 +52,10 @@ const HumanoidSection = () => {
             progress = Math.min(1, Math.max(0, Math.abs(sectionRect.top) / totalScrollDistance));
           }
           
-          // Determine which card should be visible based on progress
-          if (progress >= 0.66) {
+          // Determine which card should be visible based on progress (lowered thresholds for easier transitions)
+          if (progress >= 0.5) {
             setActiveCardIndex(2);
-          } else if (progress >= 0.33) {
+          } else if (progress >= 0.25) {
             setActiveCardIndex(1);
           } else {
             setActiveCardIndex(0);
@@ -88,9 +88,9 @@ const HumanoidSection = () => {
     <div 
       ref={sectionRef} 
       className="relative" 
-      style={{ height: '300vh' }}
+      style={{ height: '200vh' }}
     >
-      <section className="w-full h-screen py-10 md:py-16 sticky top-0 overflow-hidden bg-white dark:bg-dark-900 transition-colors duration-300" id="why-humanoid">
+      <section className="w-full h-screen py-10 md:py-16 sticky top-0 overflow-hidden bg-black transition-colors duration-300" id="why-humanoid">
         <div className="container px-6 lg:px-8 mx-auto h-full flex flex-col">
           <div className="mb-2 md:mb-3">
             <div className="flex items-center gap-4 mb-2 md:mb-2 pt-8 sm:pt-6 md:pt-4">

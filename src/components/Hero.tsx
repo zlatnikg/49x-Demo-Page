@@ -150,7 +150,7 @@ const Hero = () => {
               </div>
             ) : (
               <>
-              <div className="absolute inset-0 bg-gray-200/50 dark:bg-dark-900 rounded-2xl sm:rounded-3xl -z-10 shadow-xl scale-[0.85] dark:scale-100"></div>
+              <div className="absolute inset-0 bg-black rounded-2xl sm:rounded-3xl -z-10 shadow-xl scale-[0.85]"></div>
               <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl scale-[0.81]">
                 <img 
                   ref={imageRef} 

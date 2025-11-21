@@ -2,7 +2,7 @@ import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 const Footer = () => {
   const { t } = useLanguage();
-  return <footer className="w-full bg-white dark:bg-black py-0 relative overflow-hidden transition-colors duration-300">
+  return <footer className="w-full bg-black py-0 relative overflow-hidden transition-colors duration-300">
       {/* Orange half-circle design element similar to hero section */}
       <div className="absolute -bottom-[10%] -left-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
       

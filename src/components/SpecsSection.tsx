@@ -4,7 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const SpecsSection = () => {
   const { t } = useLanguage();
   return (
-    <section className="w-full pt-6 sm:pt-10 pb-16 sm:pb-24 bg-white dark:bg-dark-900 transition-colors duration-300" id="specifications">
+    <section className="w-full pt-6 sm:pt-10 pb-16 sm:pb-24 bg-black transition-colors duration-300" id="specifications">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         {/* Header with badge and line */}
         <div className="flex items-center gap-4 mb-8 sm:mb-16">

@@ -60,7 +60,7 @@ const BookACall = () => {
   }, []);
   
   return (
-    <section id="book-a-call" className="bg-white dark:bg-black py-12 sm:py-16 md:py-20 relative overflow-hidden transition-colors duration-300">
+    <section id="book-a-call" className="bg-black py-12 sm:py-16 md:py-20 relative overflow-hidden transition-colors duration-300">
       {/* Orange half-circle design element similar to hero section */}
       <div className="absolute -bottom-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
       
@@ -79,7 +79,7 @@ const BookACall = () => {
           </p>
           
           {/* Cal.com Calendar Embed */}
-          <div className="w-full rounded-lg overflow-hidden shadow-lg bg-white dark:bg-dark-900">
+          <div className="w-full rounded-lg overflow-hidden shadow-lg bg-black">
             <div 
               ref={calRef}
               style={{ width: '100%', height: '100%', overflow: 'scroll', minHeight: '700px' }} 

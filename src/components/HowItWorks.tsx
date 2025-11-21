@@ -16,8 +16,8 @@ const StepCard = ({ number, title, description, isActive, onClick }: StepCardPro
       className={cn(
         "rounded-xl p-6 cursor-pointer transition-all duration-500 border",
         isActive 
-          ? "bg-white shadow-elegant border-pulse-200" 
-          : "bg-white/50 hover:bg-white/80 border-transparent"
+          ? "bg-black shadow-elegant border-pulse-200" 
+          : "bg-black/50 hover:bg-black/80 border-transparent"
       )}
       onClick={onClick}
     >
@@ -108,10 +108,10 @@ const HowItWorks = () => {
   }, []);
   
   return (
-    <section className="py-20 bg-white relative" id="how-it-works" ref={sectionRef}>
+    <section className="py-20 bg-black relative" id="how-it-works" ref={sectionRef}>
       {/* Background decorative elements */}
       <div className="absolute -top-20 right-0 w-72 h-72 bg-pulse-50 rounded-full opacity-60 blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 left-10 w-64 h-64 bg-gray-50 rounded-full opacity-70 blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 left-10 w-64 h-64 bg-black rounded-full opacity-70 blur-3xl -z-10"></div>
       
       <div className="section-container">
         <div className="text-center mb-16 opacity-0 fade-in-stagger">
