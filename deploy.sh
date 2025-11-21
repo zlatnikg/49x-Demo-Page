@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Deployment script for sprint.49x.ai
+# Deployment script for intro.49x.ai
 # This script builds the project and deploys it to S3
 
 set -e  # Exit on error
@@ -36,6 +36,13 @@ if aws s3 ls "s3://$BUCKET_NAME" 2>&1 | grep -q 'NoSuchBucket'; then
         --error-document index.html \
         --region "$REGION"
     
+    # Disable Block Public Access settings FIRST (needed before setting bucket policy)
+    echo "🔓 Disabling Block Public Access settings..."
+    aws s3api put-public-access-block \
+        --bucket "$BUCKET_NAME" \
+        --public-access-block-configuration \
+        "BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false"
+    
     # Set bucket policy for public read access
     echo "🔓 Setting bucket policy for public access..."
     cat > /tmp/bucket-policy.json <<EOF
@@ -55,15 +62,40 @@ EOF
     aws s3api put-bucket-policy --bucket "$BUCKET_NAME" --policy file:///tmp/bucket-policy.json
     rm /tmp/bucket-policy.json
     
-    # Block public access settings (needed for static website hosting)
-    aws s3api put-public-access-block \
-        --bucket "$BUCKET_NAME" \
-        --public-access-block-configuration \
-        "BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false"
-    
     echo "✅ Bucket created and configured"
 else
     echo "✅ Bucket already exists"
+    # Ensure Block Public Access is disabled and bucket policy is set (in case bucket was created manually)
+    echo "🔓 Ensuring Block Public Access settings are disabled..."
+    aws s3api put-public-access-block \
+        --bucket "$BUCKET_NAME" \
+        --public-access-block-configuration \
+        "BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false" 2>/dev/null || true
+    
+    echo "🔓 Ensuring bucket policy is set..."
+    cat > /tmp/bucket-policy.json <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::$BUCKET_NAME/*"
+        }
+    ]
+}
+EOF
+    aws s3api put-bucket-policy --bucket "$BUCKET_NAME" --policy file:///tmp/bucket-policy.json 2>/dev/null || true
+    rm /tmp/bucket-policy.json
+    
+    # Ensure static website hosting is enabled
+    echo "🌐 Ensuring static website hosting is configured..."
+    aws s3 website "s3://$BUCKET_NAME" \
+        --index-document index.html \
+        --error-document index.html \
+        --region "$REGION" 2>/dev/null || true
 fi
 
 # Step 3: Upload files to S3
